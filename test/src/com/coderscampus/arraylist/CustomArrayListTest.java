@@ -34,7 +34,7 @@ class CustomArrayListTest {
 		for(int i = 0; i < 8; i++) {
 			sut.add("Element " + i);
 		}
-		sut.add(10, "CheesePie");
+		assertThrows(IndexOutOfBoundsException.class, () -> sut.add(10, "CheesePie"));
 		
 	}
 	
@@ -57,7 +57,7 @@ class CustomArrayListTest {
 		for(int i = 0; i < 8; i++) {
 			sut.add("Element " + i);
 		}
-		sut.remove(10);
+		assertThrows(IndexOutOfBoundsException.class, () -> sut.remove(10));
 	}
 
 }
